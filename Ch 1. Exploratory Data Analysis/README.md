@@ -16,15 +16,15 @@ Data must be put into a structured format for statistical operations
     -   *Ordinal:* 
                   Categorical data that has an explicit ordering. (Synonym: ordered factor)
 
-## Rectangular Data
+#### Rectangular Data
 
--  The typical frame of reference for analysis in data science is a rectangular data object, like a spreadsheet or database table.
--  Rectangular data is the general term for a two-dimensional matrix with rows indicating records (cases) and columns indicating features (variables); data frame is the specific format in R and Python.
+-  Rectangular data is a two-dimensional matrix with rows indicating records (cases) and columns indicating features (variables) aka dataframe.
 
-## Non-Rectangular Data
+#### Non-Rectangular Data
 
--   It is the raw material for statistical forecasting methods, and it is also a key component of the data produced by devices—the Internet of Things.
--   Spatial data structures, which are used in mapping and location analytics, are more complex and varied than rectangular data structures. In object representation, the focus of the data is an object (e.g., a house) and its spatial coordinates. The field view, by contrast, focuses on small units of space and the value of a relevant metric (pixel brightness, for example).
+- produced by devices—the Internet of Things.
+  
+- Graphs, and other data types
 
 # Estimates of Location
 
@@ -39,7 +39,7 @@ medal_count = pd.read_excel("../DataSets/Medals.xlsx")
 medal_count['Total'].mean()
 ```
 
--   _Weighted mean: Same as mean except you multiply every value of some_ $x_i$ before adding them up and dividing by the number of instances
+-   _Weighted mean:_ Same as mean except you multiply every value of some $x_i$ before adding them up and dividing by the number of instances
 
 $$ mean(x)=\frac{\sum^{n}_{i=1}w_ix_i}{\sum^{n}_{i = i}w_i} $$
 
@@ -63,7 +63,7 @@ trim_mean(medal_count['Gold'], 0.1)
 
 This removes 10 % of data in the Gold column top and bottom before the calculation of the mean.
 
-_Robust_: A robust metric is not sensitive to outliers
+- _Robust_: A robust metric is not sensitive to outliers
 
 -   _Median_: The middle value in a sorted list of value
 
@@ -75,7 +75,7 @@ medal_count["Total"].median()
 
 Median is a better example of the average medal won than the mean.
 
--   _Weighted Median: Same as median except you multiply every value of some_ $x_i$ and pick the middle value, such that the sum of the value of the left of the median equals right of the median
+-   _Weighted Median:_ Same as median except you multiply every value of some $x_i$ and pick the middle value, such that the sum of the value of the left of the median equals right of the median
 
 ```python
 import pandas as pd
